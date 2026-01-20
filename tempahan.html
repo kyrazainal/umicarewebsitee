@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Tempahan Umicare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-left">
+        <a href="index.html">
+            <img src="logo.jpg" class="logo">
+        </a>
+        <h2>Umicare</h2>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="pengasas.html">Founder</a>
+        <a href="tentang.html">About</a>
+        <a href="kenapa.html">Why Umicare</a>
+        <a href="testimoni.html">Testimonial</a>
+        <a href="hubungi.html">Contact</a>
+        <a href="tempahan.html" class="btn">Booking</a>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header class="simple-header">
+    <h1>Tempahan Perkhidmatan Umicare</h1>
+    <p class="slogan">Service Booking</p>
+</header>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section">
+
+    <div class="booking-card">
+
+        <h2>Borang Tempahan</h2>
+        <p>Sila isi borang di bawah dan kami akan hubungi anda melalui WhatsApp.</p>
+
+        <form onsubmit="hantarWhatsapp(); return false;">
+
+            <input type="text" id="nama" placeholder="Nama Penuh" required>
+            <input type="text" id="telefon" placeholder="Nombor Telefon" required>
+
+            <select id="servis" required>
+                <option value="">Pilih Jenis Perkhidmatan</option>
+                <option>Penjagaan Warga Emas</option>
+                <option>Penjagaan Pesakit di Rumah</option>
+                <option>Penjagaan Pesakit di Hospital</option>
+                <option>Bantuan Aktiviti Harian (ADL)</option>
+                <option>Pemantauan Kesihatan Asas</option>
+                <option>Sokongan Emosi & Sosial</option>
+            </select>
+
+            <input type="date" id="tarikh" required>
+            <textarea id="alamat" placeholder="Alamat Pesakit" required></textarea>
+            <textarea id="mesej" placeholder="Maklumat Tambahan"></textarea>
+
+            <button type="submit">Hantar Tempahan Melalui WhatsApp</button>
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Umicare – Compassionate Care Service</p>
+    <p>Kehadiranku, Bahagiamu</p>
+    <p>Ipoh, Perak | WhatsApp: 017-604 7142</p>
+</footer>
+
+<script>
+function hantarWhatsapp() {
+
+    var nama = document.getElementById("nama").value;
+    var telefon = document.getElementById("telefon").value;
+    var servis = document.getElementById("servis").value;
+    var tarikh = document.getElementById("tarikh").value;
+    var alamat = document.getElementById("alamat").value;
+    var mesej = document.getElementById("mesej").value;
+
+    var noWhatsapp = "60176047142";
+
+    var url = "https://wa.me/" + noWhatsapp +
+        "?text=Tempahan%20Umicare%0A%0A" +
+        "Nama: " + nama + "%0A" +
+        "Telefon: " + telefon + "%0A" +
+        "Servis: " + servis + "%0A" +
+        "Tarikh: " + tarikh + "%0A" +
+        "Alamat: " + alamat + "%0A" +
+        "Mesej: " + mesej;
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
